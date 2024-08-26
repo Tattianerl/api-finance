@@ -14,6 +14,10 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
 }));
 
+app.get('/', (req, res) => {
+  res.send('Servidor rodando na porta ' + port);
+});
+
 
 // Criar usuário
 app.post('/register', async (req, res) => {
