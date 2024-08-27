@@ -9,7 +9,10 @@ app.use(express.json());
 // Configuração da porta
 const port = process.env.PORT || 3333;
 
-app.use(cors());
+app.use(cors({
+  origin:  '*' ,
+  methods: 'GET,POST,PUT,DELETE',
+}));
 
 app.get('/', (req, res) => {
   res.send('Servidor rodando na porta ' + port);
